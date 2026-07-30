@@ -4,72 +4,15 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { Magnetic } from "@/components/ui/magnetic";
 import { SplitText } from "@/components/ui/split-text";
 import { cn } from "@/lib/utils";
+import { projects } from "@/data/projects";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
-
-const projects = [
-  {
-    id: "haven",
-    number: "01",
-    category: "Mobile App Design",
-    title: "Haven",
-    description: "A premium homestay booking platform designed to simplify travel planning through intuitive search, seamless booking, and elegant user experiences.",
-    challenge: "Create a frictionless booking experience that makes discovering unique stays effortless while building trust through clean, modern design.",
-    solution: "Designed an intuitive mobile application featuring personalized recommendations, streamlined booking flows, secure payments, and immersive property browsing.",
-    features: ["Smart Search", "Property Discovery", "Wishlist", "Secure Booking", "Interactive Maps", "Ratings & Reviews", "Booking Management"],
-    tools: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
-    cta: "View Case Study",
-    color: "from-blue-500/20 to-purple-500/20",
-    glowColor: "rgba(139, 92, 246, 0.15)",
-  },
-  {
-    id: "mediconnect",
-    number: "02",
-    category: "Healthcare Platform",
-    title: "MediConnect",
-    description: "A modern healthcare platform connecting patients and healthcare professionals through secure digital experiences.",
-    challenge: "Simplify healthcare interactions while maintaining accessibility, trust, and security.",
-    solution: "Designed an intuitive experience for appointments, consultations, prescriptions, and digital medical records.",
-    features: ["Video Consultation", "Appointment Scheduling", "Medical Records", "Secure Authentication", "Doctor Profiles", "Health Dashboard", "Notifications"],
-    tools: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
-    cta: "Explore Project",
-    color: "from-emerald-500/20 to-teal-500/20",
-    glowColor: "rgba(16, 185, 129, 0.15)",
-  },
-  {
-    id: "pureleaf",
-    number: "03",
-    category: "E-Commerce",
-    title: "PureLeaf Organics",
-    description: "An elegant e-commerce experience for premium organic teas focused on wellness, sustainability, and seamless shopping.",
-    challenge: "Create a modern shopping experience that communicates trust, product quality, and brand authenticity.",
-    solution: "Designed a premium online store with educational product pages, intuitive navigation, and a frictionless checkout experience.",
-    features: ["Product Catalog", "Product Details", "Shopping Cart", "Secure Checkout", "Subscription Plans", "Wishlist", "Product Reviews"],
-    tools: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
-    cta: "View Project",
-    color: "from-amber-500/20 to-orange-500/20",
-    glowColor: "rgba(245, 158, 11, 0.15)",
-  },
-  {
-    id: "greensphere",
-    number: "04",
-    category: "Sustainability Platform",
-    title: "GreenSphere",
-    description: "A modern platform where users can buy, track, and conserve plants while learning how to care for them through an engaging digital experience.",
-    challenge: "Most plant marketplaces only focus on selling products. The objective was to combine shopping, plant care, and conservation into one seamless ecosystem.",
-    solution: "Designed a responsive platform that helps users discover plants, receive personalized care reminders, monitor plant health, and contribute to sustainability initiatives.",
-    features: ["Plant Marketplace", "AI Plant Recommendations", "Care Tracking", "Watering Reminders", "Plant Health Monitoring", "Order Tracking", "Educational Guides", "Community Journal", "Conservation Dashboard"],
-    tools: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
-    cta: "Discover GreenSphere",
-    color: "from-green-500/20 to-emerald-500/20",
-    glowColor: "rgba(34, 197, 94, 0.15)",
-  }
-];
 
 function ProjectCard({ project, index }: { project: typeof projects[0], index: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -251,7 +194,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
 
         <div className="mt-8">
           <Magnetic>
-            <button className="group relative inline-flex items-center gap-4 px-8 py-4 bg-background/40 hover:bg-background/80 backdrop-blur-xl border border-primary/20 hover:border-primary/50 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(184,155,234,0.3)]">
+            <Link href={`/work/${project.id}`} className="group relative inline-flex items-center gap-4 px-8 py-4 bg-background/40 hover:bg-background/80 backdrop-blur-xl border border-primary/20 hover:border-primary/50 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(184,155,234,0.3)]">
               <span className="font-medium text-foreground group-hover:text-primary transition-colors">{project.cta}</span>
               <span className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -259,7 +202,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
               
               {/* Gradient border effect on hover */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm -z-10" />
-            </button>
+            </Link>
           </Magnetic>
         </div>
       </div>

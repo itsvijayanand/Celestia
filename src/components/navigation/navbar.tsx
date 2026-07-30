@@ -32,12 +32,14 @@ export function Navbar() {
 
       <nav className="flex items-center gap-4">
         <Magnetic>
-          <Button 
-            variant="outline" 
-            className="rounded-full bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all text-sm md:text-base px-6 h-10 md:h-12"
-          >
-            Let's Talk
-          </Button>
+          <Link href="/#contact">
+            <Button 
+              variant="outline" 
+              className="rounded-full bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all text-sm md:text-base px-6 h-10 md:h-12"
+            >
+              Let's Talk
+            </Button>
+          </Link>
         </Magnetic>
       </nav>
     </header>
