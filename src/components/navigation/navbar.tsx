@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/ui/magnetic";
+import { Logo } from "@/components/ui/logo";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,11 +26,8 @@ export function Navbar() {
         scrolled ? "bg-background/40 backdrop-blur-md border-b border-border/50 py-4" : "bg-transparent py-6 md:py-8"
       )}
     >
-      <Link href="/" className="group flex items-center gap-2">
-        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg group-hover:scale-110 transition-transform">
-          C
-        </div>
-        <span className="font-semibold text-lg tracking-tight text-foreground hidden sm:block">Celestia Creative.</span>
+      <Link href="/" className="group flex items-center h-16 md:h-20 hover:opacity-80 transition-opacity">
+        <Logo className="h-full w-auto" />
       </Link>
 
       <nav className="flex items-center gap-4">
