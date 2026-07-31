@@ -22,17 +22,17 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 flex items-center justify-end px-6 md:px-12 transition-all duration-500",
+        "fixed top-0 inset-x-0 z-50 flex items-center justify-between md:justify-end px-6 md:px-12 transition-all duration-500",
         scrolled ? "bg-background/40 backdrop-blur-md border-b border-border/50 py-4" : "bg-transparent py-6 md:py-8"
       )}
     >
-      <div className="w-full md:absolute md:inset-0 flex items-center justify-start md:justify-center pointer-events-none">
+      <div className="md:absolute md:inset-0 flex items-center justify-start md:justify-center pointer-events-none">
         <Link href="/" className="group flex items-center hover:opacity-80 transition-opacity pointer-events-auto">
           <Logo className="h-14 w-auto md:h-20" />
         </Link>
       </div>
 
-      <nav className="hidden md:flex items-center gap-4">
+      <nav className="flex items-center gap-4">
         <Magnetic>
           <Link href="/#contact">
             <Button 
