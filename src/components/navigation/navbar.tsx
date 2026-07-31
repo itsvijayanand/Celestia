@@ -32,7 +32,7 @@ export function Navbar() {
         </Link>
       </div>
 
-      <nav className="flex items-center gap-4">
+      <nav className="hidden md:flex items-center gap-4">
         <Magnetic>
           <Link href="/#contact">
             <Button 
