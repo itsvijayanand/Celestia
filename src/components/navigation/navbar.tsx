@@ -26,8 +26,8 @@ export function Navbar() {
         scrolled ? "bg-background/40 backdrop-blur-md border-b border-border/50 py-4" : "bg-transparent py-6 md:py-8"
       )}
     >
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <Link href="/" className="group flex items-center h-20 hover:opacity-80 transition-opacity pointer-events-auto">
+      <div className="w-full md:absolute md:inset-0 flex items-center justify-center pointer-events-none">
+        <Link href="/" className="group flex items-center h-28 md:h-20 hover:opacity-80 transition-opacity pointer-events-auto">
           <Logo className="h-full w-auto" />
         </Link>
       </div>

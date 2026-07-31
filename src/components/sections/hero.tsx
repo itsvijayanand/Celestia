@@ -6,7 +6,7 @@ import { Magnetic } from "@/components/ui/magnetic";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative w-full min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden px-6">
+    <section id="hero" className="relative w-full min-h-screen flex items-center justify-center pt-48 md:pt-56 pb-12 overflow-hidden px-6">
 
 
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto gap-8">
