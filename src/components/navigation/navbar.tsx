@@ -28,7 +28,7 @@ export function Navbar() {
     >
       <div className="w-full md:absolute md:inset-0 flex items-center justify-center pointer-events-none">
         <Link href="/" className="group flex items-center hover:opacity-80 transition-opacity pointer-events-auto mt-2 md:mt-0">
-          <Logo className="h-20 w-auto md:h-20" />
+          <Logo className="h-14 w-auto md:h-20" />
         </Link>
       </div>
 
