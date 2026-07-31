@@ -128,23 +128,31 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
         >
           {/* Parallax Inner Container */}
           <div ref={imageRef} className={cn("w-full h-full bg-gradient-to-br flex items-center justify-center relative", project.color)}>
-            <div className="absolute inset-0 opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
-            
-            {/* Abstract 3D Glass Device Representation */}
-            <div className="w-[60%] h-[70%] rounded-3xl bg-white/5 border border-white/20 backdrop-blur-md shadow-2xl flex flex-col overflow-hidden relative z-10 transition-transform duration-700 group-hover:scale-105 group-hover:-translate-y-4">
-              <div className="w-full h-12 bg-white/5 border-b border-white/10 flex items-center px-6 gap-2 shrink-0">
-                <div className="w-3 h-3 rounded-full bg-primary/20" />
-                <div className="w-3 h-3 rounded-full bg-primary/20" />
-                <div className="w-3 h-3 rounded-full bg-primary/20" />
+            {/* @ts-ignore */}
+            {project.image ? (
+              <img 
+                /* @ts-ignore */
+                src={project.image} 
+                alt={project.title} 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+            ) : (
+              <div className="w-[60%] h-[70%] rounded-3xl bg-white/5 border border-white/20 backdrop-blur-md shadow-2xl flex flex-col overflow-hidden relative z-10 transition-transform duration-700 group-hover:scale-105 group-hover:-translate-y-4">
+                <div className="w-full h-12 bg-white/5 border-b border-white/10 flex items-center px-6 gap-2 shrink-0">
+                  <div className="w-3 h-3 rounded-full bg-primary/20" />
+                  <div className="w-3 h-3 rounded-full bg-primary/20" />
+                  <div className="w-3 h-3 rounded-full bg-primary/20" />
+                </div>
+                <div className="flex-1 p-6 flex flex-col gap-4">
+                  <div className="w-1/2 h-6 rounded bg-primary/10" />
+                  <div className="w-full h-32 rounded-xl bg-primary/5" />
+                  <div className="w-3/4 h-4 rounded bg-primary/10 mt-auto" />
+                </div>
               </div>
-              <div className="flex-1 p-6 flex flex-col gap-4">
-                <div className="w-1/2 h-6 rounded bg-primary/10" />
-                <div className="w-full h-32 rounded-xl bg-primary/5" />
-                <div className="w-3/4 h-4 rounded bg-primary/10 mt-auto" />
-              </div>
-            </div>
+            )}
+            <div className="absolute inset-0 opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay pointer-events-none z-20" />
           </div>
-          
+
           {/* Floating Particles on Hover */}
           <div className="absolute top-[20%] left-[10%] w-2 h-2 rounded-full bg-primary/40 opacity-0 group-hover:opacity-100 group-hover:-translate-y-12 transition-all duration-1000 delay-100 blur-[1px]" />
           <div className="absolute top-[60%] right-[15%] w-3 h-3 rounded-full bg-primary/30 opacity-0 group-hover:opacity-100 group-hover:-translate-y-16 transition-all duration-1000 delay-200 blur-[2px]" />
@@ -194,7 +202,12 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
 
         <div className="mt-8">
           <Magnetic>
-            <Link href={`/work/${project.id}`} className="group relative inline-flex items-center gap-4 px-8 py-4 bg-background/40 hover:bg-background/80 backdrop-blur-xl border border-primary/20 hover:border-primary/50 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(184,155,234,0.3)]">
+            <Link 
+              href={/* @ts-ignore */ project.link || `/work/${project.id}`}
+              target={/* @ts-ignore */ project.link ? "_blank" : undefined}
+              rel={/* @ts-ignore */ project.link ? "noopener noreferrer" : undefined}
+              className="group relative inline-flex items-center gap-4 px-8 py-4 bg-background/40 hover:bg-background/80 backdrop-blur-xl border border-primary/20 hover:border-primary/50 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(184,155,234,0.3)]"
+            >
               <span className="font-medium text-foreground group-hover:text-primary transition-colors">{project.cta}</span>
               <span className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

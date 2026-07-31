@@ -12,6 +12,8 @@ export const projects = [
     cta: "View Case Study",
     color: "from-blue-500/20 to-purple-500/20",
     glowColor: "rgba(139, 92, 246, 0.15)",
+    link: "https://www.behance.net/gallery/226168155/Haven-Case-Study-for-Homestay-Booking-app-Research",
+    image: "/haven-cover.png",
   },
   {
     id: "mediconnect",
@@ -26,6 +28,8 @@ export const projects = [
     cta: "Explore Project",
     color: "from-emerald-500/20 to-teal-500/20",
     glowColor: "rgba(16, 185, 129, 0.15)",
+    link: "https://www.behance.net/gallery/231657289/MediConnect-Virtual-Healthcare-at-Your-Fingertips",
+    image: "/mediconnect-cover.png.png",
   },
   {
     id: "pureleaf",
@@ -40,19 +44,7 @@ export const projects = [
     cta: "View Project",
     color: "from-amber-500/20 to-orange-500/20",
     glowColor: "rgba(245, 158, 11, 0.15)",
-  },
-  {
-    id: "greensphere",
-    number: "04",
-    category: "Sustainability Platform",
-    title: "GreenSphere",
-    description: "A modern platform where users can buy, track, and conserve plants while learning how to care for them through an engaging digital experience.",
-    challenge: "Most plant marketplaces only focus on selling products. The objective was to combine shopping, plant care, and conservation into one seamless ecosystem.",
-    solution: "Designed a responsive platform that helps users discover plants, receive personalized care reminders, monitor plant health, and contribute to sustainability initiatives.",
-    features: ["Plant Marketplace", "AI Plant Recommendations", "Care Tracking", "Watering Reminders", "Plant Health Monitoring", "Order Tracking", "Educational Guides", "Community Journal", "Conservation Dashboard"],
-    tools: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
-    cta: "Discover GreenSphere",
-    color: "from-green-500/20 to-emerald-500/20",
-    glowColor: "rgba(34, 197, 94, 0.15)",
+    link: "https://www.behance.net/gallery/231382919/PureLeaf-Organics-UIUX-Case-Study",
+    image: "/pure-leaf.png",
   }
 ];

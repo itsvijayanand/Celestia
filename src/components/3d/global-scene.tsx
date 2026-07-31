@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, Float, MeshTransmissionMaterial, ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -10,6 +10,9 @@ function GlassShapes() {
   const torusRef = useRef<THREE.Mesh>(null);
   const sphereRef = useRef<THREE.Mesh>(null);
   const icosahedronRef = useRef<THREE.Mesh>(null);
+
+  const { viewport } = useThree();
+  const responsiveScale = Math.min(1, viewport.width / 4);
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -38,7 +41,7 @@ function GlassShapes() {
   });
 
   return (
-    <group ref={groupRef}>
+    <group ref={groupRef} scale={responsiveScale}>
       <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
         <mesh ref={torusRef} position={[2, 1, -2]}>
           <torusGeometry args={[1, 0.4, 32, 64]} />

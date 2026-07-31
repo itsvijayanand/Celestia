@@ -11,7 +11,6 @@ const sections = [
   { id: "project-haven", label: "Haven" },
   { id: "project-mediconnect", label: "MediConnect" },
   { id: "project-pureleaf", label: "PureLeaf" },
-  { id: "project-greensphere", label: "GreenSphere" },
   { id: "process", label: "Process" },
   { id: "testimonials", label: "Testimonials" },
   { id: "faq", label: "FAQ" },
