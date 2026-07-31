@@ -22,13 +22,13 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 flex items-center justify-end px-6 md:px-12 py-4 md:py-6 transition-all duration-500",
-        scrolled ? "bg-background/40 backdrop-blur-md border-b border-border/50 py-4" : "bg-transparent py-6 md:py-8"
+        "fixed top-0 inset-x-0 z-50 flex items-center justify-end px-6 md:px-12 transition-all duration-500",
+        scrolled ? "bg-background/40 backdrop-blur-md border-b border-border/50 pt-8 pb-4 md:py-4" : "bg-transparent pt-12 pb-6 md:py-8"
       )}
     >
       <div className="w-full md:absolute md:inset-0 flex items-center justify-center pointer-events-none">
-        <Link href="/" className="group flex items-center h-28 md:h-20 hover:opacity-80 transition-opacity pointer-events-auto">
-          <Logo className="h-full w-auto" />
+        <Link href="/" className="group flex items-center hover:opacity-80 transition-opacity pointer-events-auto mt-2 md:mt-0">
+          <Logo className="h-20 w-auto md:h-20" />
         </Link>
       </div>
 
