@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from "react";
 
 function Counter({ from, to, duration = 2, suffix = "" }: { from: number; to: number; duration?: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-20px" });
   const [count, setCount] = useState(from);
 
   useEffect(() => {
