@@ -27,7 +27,7 @@ export function Navbar() {
       )}
     >
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <Link href="/" className="group flex items-center h-10 md:h-20 hover:opacity-80 transition-opacity pointer-events-auto">
+        <Link href="/" className="group flex items-center h-20 hover:opacity-80 transition-opacity pointer-events-auto">
           <Logo className="h-full w-auto" />
         </Link>
       </div>
